@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card p-4 shadow-sm border-0">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold main-title-ombre">PHÂN TÍCH LỐI CHƠI</h2>
+                <p class="text-muted">Hãy cho biết chỉ số của bạn, chúng tôi sẽ tìm cho bạn cây vợt tối ưu nhất.</p>
+            </div>
+            
+            <form action="/recommend" method="POST">
+                <div class="mb-4">
+                    <label class="form-label fw-bold">1. Trình độ hiện tại của bạn:</label>
+                    <select class="form-select form-select-lg" name="trinh_do" required>
+                        <option value="Yếu">Hệ dưỡng sinh (Yếu) - "Tui hong biết đánh đâu à nha"</option>
+                        <option value="Trung bình">Đã có nét (Trung bình) - "Bạn sợ à"</option>
+                        <option value="Khá">Cổ tay thép (Khá/ Giỏi) - "2 chai revive nha"</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">2. Lối chơi chủ đạo trên sân:</label>
+                    <select class="form-select form-select-lg" name="loi_choi" required>
+                        <option value="Công thủ toàn diện">Công thủ toàn diện (Thích điều cầu, linh hoạt)</option>
+                        <option value="Phòng thủ / Điều cầu">Phòng thủ phản tạt (Thủ dẻo, ép lưới nhanh)</option></option>
+                        <option value="Tấn công">Tấn công vũ bão (Thích đập cầu, đè lưới)</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold">3. Ngân sách tối đa của bạn (VNĐ):</label>
+                    <input type="number" class="form-control form-control-lg" name="ngan_sach" placeholder="Ví dụ: 1500000 (Để trống nếu ví dày)" min="0">
+                </div>
+
+                <div class="d-grid gap-2 mt-5">
+                    <button type="submit" class="btn btn-pastel btn-lg py-3 w-100">
+                        Phân tích & Gợi ý
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
